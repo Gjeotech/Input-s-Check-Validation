@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+    <title>Disable if empty</title>
+    <style>
+        form{
+            width:100%;
+            max-width:340px;
+            height:50vh;
+            background:#00ffff;
+            position:absolute;
+            left:50%;
+            top:5%;
+            transform:translate(-50%,50%);
+            border-radius:15px;
+
+
+        }
+
+        input {
+            margin-top: 20px;
+            margin-left: 30px;
+            width: 300px;
+            height: 50px;
+            border: 0px;
+            outline: 0px;
+            border-radius: 25px;
+        }
+
+        form button {
+            border: 1px;
+            width: 100px;
+            height: 50px;
+            background: fffff;
+            outline: 0px;
+            color: white;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-left: 50px;
+            color: navy;
+            align-content: center;
+            border-radius: 5px;
+        }
+
+
+        form h2{
+            color:navy;
+            font-size:16px;
+            text-align:center;
+            font-weight:bold;
+
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div>
+        <form action="#">
+
+            <h2>Simple Disabled Button When Input is Empty</h2>
+            <br />
+            <input type="text" id="username" autocomplete="off" placeholder="Username" />
+            <br />
+            <input type="password" id="password" autocomplete="off" placeholder="Password" />
+            <br />
+            <button type="submit" id="submit" disabled>Submit</button>
+
+
+        </form>
+
+
+
+    </div>
+    <script>
+        const submitButton = document.getElementById("submit");
+        const getUserName = document.getElementById("username");
+        const getPasword = document.getElementById("password");
+
+
+        getPasword.addEventListener("keyup", (e) => {
+            const value = e.currentTarget.value;
+            submitButton.disabled = false;
+
+            if (value === "") {
+                submitButton.disabled = true;
+                submitButton.style.cursor = 'pointer';
+            } 
+
+        });
+
+       /* getUserName.addEventListener("keypress", (e) => {
+            const value = e.currentTarget.value;
+
+            if (value == "") {
+                submitButton.disabled = true;
+
+            } else {
+                submitButton.disabled = false;
+            }
+
+        });*/
+
+
+
+
+    </script>
+</body>
+</html>
